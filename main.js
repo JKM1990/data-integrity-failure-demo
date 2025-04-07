@@ -23,7 +23,7 @@ function saveNote() {
     }
 
     const notes = JSON.parse(localStorage.getItem("notes")) || [];
-    notes.push(note);
+    notes.push(formatNote(note));
     localStorage.setItem("notes", JSON.stringify(notes));
     loadNotes();
     document.getElementById("noteInput").value = "";
